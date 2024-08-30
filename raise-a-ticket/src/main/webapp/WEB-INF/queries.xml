@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<queries>
+
+	<query id="create_ticket_table">
+	
+	<![CDATA[
+	
+		CREATE TABLE raisedtickets(
+			ticketNo varchar (20) NOT NULL,
+			itNumber varchar (20),
+			eMail varchar (20),
+			year varchar(20),
+			semester varchar(20),
+			module varchar(20),
+			description varchar(45),
+			PRIMARY KEY(ticketNo)
+		);	
+		
+		
+	]]>
+	
+	</query>
+
+
+	<query id="insert_ticket">
+	
+	<![CDATA[
+	
+	INSERT INTO raisedtickets(ticketNo,itNumber,eMail,year,semester,module,description)
+	VALUES(?,?,?,?,?,?,?);
+		
+	]]>
+	
+	</query>
+	
+	<query id="get_ticket_nos">
+	
+	<![CDATA[
+	
+	SELECT ticketno FROM raisedtickets;
+		
+	]]>
+	
+	</query>
+	
+	
+	<query id="get_all_ticket">
+	
+	<![CDATA[
+	
+	SELECT * FROM raisedtickets;
+		
+	]]>
+	
+	</query>
+	
+	
+	<query id="get_ticket_by_id">
+	
+	<![CDATA[
+	
+	SELECT * FROM raisedtickets WHERE ticketNo = ?;
+		
+	]]>
+	
+	</query>
+	
+	
+	<query id="update_ticket">
+	
+	<![CDATA[
+	
+	UPDATE raisedtickets
+	SET itNumber = ?,eMail = ?,year = ?,semester = ?,module = ?,description = ?
+	WHERE ticketNo = ?;
+		
+	]]>
+	
+	</query>
+	
+	<query id="delete_ticket">
+	
+	<![CDATA[
+	
+	DELETE FROM raisedtickets WHERE ticketNo = ?;
+	]]>
+	
+	</query>
+</queries>
